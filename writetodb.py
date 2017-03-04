@@ -24,9 +24,9 @@ while True:
 			raw = json.loads(buf[:-1])
 			data = {
 				'ts': time.localtime(float(raw["windSpeed"]["t"])),
-				'windspeed': raw["windSpeed"]["WS"],
+				'windspeed': float(raw["windSpeed"]["WS"]),
 				'winddirection': raw["windDirection"]["WD"],
-				'temp': raw["temperature"]["T"],
+				'temp': float(raw["temperature"]["T"]),
 				'humidity': raw["humidity"]["H"],
 				'rain': raw["rainCounter"]["RC"]
 			}
