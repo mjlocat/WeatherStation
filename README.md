@@ -21,14 +21,16 @@ The rest of the code has been implemented to suit my needs.
   make
   sudo make install
   ```
+* Create MySQL or MariaDB database and database user to store the data (can be local or remote database)
+* Run the SQL statements in `create_tables.sql` on that database
 
 ## Installation
 
 * make
 * cp env.sample .env
-* Modify .env for your environment
+* Modify .env for your database environment
 * pip install dotenv-python mysql-connector
 
 ## Run
 
-* ./weatherstation 2>weatherstation.log | writetodb.py
+* ./weatherstation 2>weatherstation.log | python writetodb.py
