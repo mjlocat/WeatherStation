@@ -33,7 +33,8 @@ The rest of the code has been implemented to suit my needs.
 * Add `checkrunning.sh` to your crontab (example below assumes this directory is `~/WeatherStation`)
   ``` sh
   crontab -e
-  */5 * * * * source ~/.bashrc && cd ~/WeatherStation && ./checkrunning.sh 2>&1 > /dev/null
+  SHELL=/bin/bash
+  * * * * * source ~/.bashrc && cd ~/WeatherStation && ./checkrunning.sh 2>&1 >> /dev/null
   ```
 
 ## Run
