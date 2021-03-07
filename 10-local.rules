@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ATTRS{idVendor}=="24c0", ATTRS{idProduct}=="0003", SYMLINK="weather" MODE="666",GROUP="users"

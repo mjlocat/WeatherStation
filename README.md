@@ -6,10 +6,24 @@ The C code to interface with the weather station is copied from https://github.c
 
 The rest of the code has been implemented to suit my needs. 
 
+## Prerequisites
+
+* Add `10-local.rules` to `/etc/udev/rules.d/` and reboot
+* Ensure you have `libudev-dev` and `bzip2` installed
+  ``` sh
+  sudo apt install libudev-dev bzip2 -y
+  ```
+* Download libusb-1.0.19 from [here](http://downloads.sourceforge.net/libusb/libusb-1.0.19.tar.bz2), build and install it
+  ``` sh
+  tar jxf libusb-1.0.19.tar.bz2
+  cd libusb-1.0.19
+  ./configure
+  make
+  sudo make install
+  ```
+
 ## Installation
 
-* TODO: Add build dependencies
-* TODO: Add instructions for USB library
 * make
 * cp env.sample .env
 * Modify .env for your environment
