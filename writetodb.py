@@ -1,15 +1,15 @@
 import sys
 import json
 import time
-from dotenv import DotEnv
+from dotenv import dotenv_values
 import mysql.connector
 
-dotenv = DotEnv()
+dotenv = dotenv_values(".env")
 dbconfig = {
-	'user': dotenv.get('DBUSER'),
-	'password': dotenv.get('DBPASS'),
-	'host': dotenv.get('DBHOST'),
-	'database': dotenv.get('DBDATABASE')
+	'user': dotenv['DBUSER'],
+	'password': dotenv['DBPASS'],
+	'host': dotenv['DBHOST'],
+	'database': dotenv['DBDATABASE']
 }
 
 cnx = mysql.connector.connect(**dbconfig)
