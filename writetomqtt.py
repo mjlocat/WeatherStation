@@ -12,11 +12,11 @@ while True:
     buf += sys.stdin.read(1)
     if (buf.endswith('\n')):
       raw = json.loads(buf[:-1])
-      client.publish("wx/windspeed", raw["windSpeed"])
-      client.publish("wx/winddirection", raw["windDirection"])
-      client.publish("wx/temperature", raw["temperature"])
-      client.publish("wx/humidity", raw["humidity"])
-      client.publish("wx/raincounter", raw["rainCounter"])
+      client.publish("wx/windspeed", json.dumps(raw["windSpeed"]))
+      client.publish("wx/winddirection", json.dumps(raw["windDirection"]))
+      client.publish("wx/temperature", json.dumps(raw["temperature"]))
+      client.publish("wx/humidity", json.dumps(raw["humidity"]))
+      client.publish("wx/raincounter", json.dumps(raw["rainCounter"]))
       buf = ''
   except KeyboardInterrupt:
     client.disconnect()
