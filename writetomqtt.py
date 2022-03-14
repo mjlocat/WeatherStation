@@ -2,7 +2,7 @@ import sys
 import json
 import paho.mqtt.client as mqtt
 
-client = mqtt.Client()
+client = mqtt.Client(client_id="wx-producer")
 client.connect(sys.argv[1])
 client.loop_start()
 
@@ -20,5 +20,5 @@ while True:
       buf = ''
   except KeyboardInterrupt:
     client.disconnect()
-    client.loop_end()
+    client.loop_stop()
     sys.exit()
